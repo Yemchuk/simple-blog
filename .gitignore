@@ -29,3 +29,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+test/models/user_test.rb
+db/migrate/20190322205056_devise_create_users.rb
