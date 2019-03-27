@@ -1,29 +1,29 @@
-<h1><%= @article.title  %></h1>
-<p>
-  <%= @article.text %>
-</p>
-<hr>
-<h2>Comments</h2>
-<% @article.comments.each do |comment|%>
-	<p>
-		<i><%= comment.author %> said:</i><br>
-	  	<%= comment.body %>
-  	</p>
-<% end %>
-
-<h2>Write a Comment</h2>
-<p>
-	<%= form_for ([@article, @article.comments.build]) do |f| %>
+<div class="row">
+	<div class="col-sx-12">
+		<h1><%= @article.title  %></h1>
+		<p><%= @article.text %></p>
+		<h2>Comments</h2>
+		<% @article.comments.each do |comment|%>
 		<p>
-			<%= f.label :author %><br>
-			<%= f.text_field :author %>
+			<i><%= comment.author %> said:</i><br>
+			<%= comment.body %>
 		</p>
+		<% end %>
+		<h2>Write a Comment</h2>
 		<p>
-			<%= f.label :body %><br>
-			<%= f.text_area :body %>
+			<%= form_for ([@article, @article.comments.build]) do |f| %>
+<!-- 			<p>
+				<%= f.label :author %><br>
+				<%= f.text_field :author %>
+			</p> -->
+			<p>
+				<%= f.label :body %><br>
+				<%= f.text_area :body %>
+			</p>
+			<p>
+				<%= f.submit %>
+			</p>
+			<%end%>
 		</p>
-		<p>
-			<%= f.submit %>
-		</p>
-	<%end%>
-</p>
+	</div>
+</div>
