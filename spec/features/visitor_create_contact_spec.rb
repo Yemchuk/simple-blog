@@ -4,6 +4,6 @@ feature "Contact Creation" do
   scenario "allows acces to contact page" do
     visit '/contacts'
 
-    expect(page).to have_content 'Blabla'
+    expect(page).to have_content I18n.t('contacts.contact_us')
   end
 end
