@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'support/session_helper'
 
 feature "Article Creation" do
   before(:all) do
@@ -11,4 +10,3 @@ feature "Article Creation" do
     expect(page).to have_content 'New Article'
   end
 end
-
